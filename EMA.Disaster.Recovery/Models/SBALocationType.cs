@@ -1,7 +1,7 @@
 ﻿
 namespace EMA.Disaster.Recovery.Models
 {
-    public class LocationType
+    public class SBALocationType
     {
         public int ID { get; set; }
         public string Name { get; set; }
