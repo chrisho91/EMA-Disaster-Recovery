@@ -175,22 +175,32 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Default\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\CountyMunicipality.cs" />
     <Compile Include="Models\Default\IdentityModels.cs" />
     <Compile Include="Models\Default\ManageViewModels.cs" />
+    <Compile Include="Models\IndividualPhotos.cs" />
+    <Compile Include="Models\IndividualSystemDamages.cs" />
+    <Compile Include="Models\IndividualWorksheet.cs" />
+    <Compile Include="Models\IndividualWorksheetDamage.cs" />
+    <Compile Include="Models\LocationType.cs" />
+    <Compile Include="Models\SBAEconInjurySurvey.cs" />
+    <Compile Include="Models\SBAPhotos.cs" />
+    <Compile Include="Models\SBAPropertyMarketValue.cs" />
+    <Compile Include="Models\SBAWorksheet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\css\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -242,6 +252,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\img\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
+﻿
 namespace EMA.Disaster.Recovery.Models
 {
     public class Contact
@@ -13,6 +9,7 @@ namespace EMA.Disaster.Recovery.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Phone { get; set; }
+        public string Phone2 { get; set; }
         public string Email { get; set; }
         
         public virtual Address Address { get; set; }

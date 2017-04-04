@@ -18,6 +18,15 @@ namespace EMA.Disaster.Recovery.DAL
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<CountyMunicipality> CountyMunicipalities { get; set; }
+        public DbSet<IndividualPhotos> IndividualPhotos { get; set; }
+        public DbSet<IndividualWorksheet> IndividualWorksheet { get; set; }
+        public DbSet<IndividualWorksheetDamage> IndividualWorksheetDamage { get; set; }
+        public DbSet<LocationType> LocationType { get; set; }
+        public DbSet<SBAEconInjurySurvey> SBAEconInjurySurvey { get; set; }
+        public DbSet<SBAPhotos> SBAPhotos { get; set; }
+        public DbSet<SBAPropertyMarketValue> SBAPropertyMarketValue { get;  set;}
+        public DbSet<SBAWorksheet> SBAWorksheet { get; set; }
+        public DbSet<IndividualSystemDamages> IndividualSystemDamages { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
