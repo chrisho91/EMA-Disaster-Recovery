@@ -20,7 +20,5 @@ namespace EMA.Disaster.Recovery.Models
         public string AdditionalComments { get; set; }
         public DateTime PrevPeriodStart { get; set; }
         public DateTime PrevPeriodEnd { get; set; }
-
-
     }
 }

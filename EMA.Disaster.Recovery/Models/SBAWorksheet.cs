@@ -7,7 +7,7 @@ namespace EMA.Disaster.Recovery.Models
     {
         public int ID { get; set; }
         public int ContactID { get; set; }
-        public int LocationTypeID { get; set; }
+        public int SBALocationTypeID { get; set; }
         public int SBAEconInjurySurveyID { get; set; }
         public int SBAPropertyMarketValueID { get; set; }
         public string PropertyOwner { get; set; }
@@ -17,7 +17,7 @@ namespace EMA.Disaster.Recovery.Models
         public string Comments { get; set; }
 
         public virtual Contact Contact { get; set; }
-        public virtual LocationType LocationType { get; set; }
+        public virtual SBALocationType LocationType { get; set; }
         public virtual SBAEconInjurySurvey SBAEconInjurySurvey { get; set; }
         public virtual SBAPropertyMarketValue SBAPropertyMarketValue { get; set; }
     }

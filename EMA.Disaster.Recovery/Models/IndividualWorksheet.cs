@@ -23,6 +23,6 @@ namespace EMA.Disaster.Recovery.Models
 
         public virtual Contact Contact { get; set; }
         public virtual IndividualWorksheetDamage IndividualWorksheetDamage { get; set; }
-        public List<IndividualSystemDamages> IndividualSystemDamage { get; set; }
+        public virtual List<IndividualSystemDamages> IndividualSystemDamage { get; set; }
     }
 }

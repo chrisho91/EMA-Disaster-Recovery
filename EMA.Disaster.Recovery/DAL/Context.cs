@@ -21,7 +21,7 @@ namespace EMA.Disaster.Recovery.DAL
         public DbSet<IndividualPhotos> IndividualPhotos { get; set; }
         public DbSet<IndividualWorksheet> IndividualWorksheet { get; set; }
         public DbSet<IndividualWorksheetDamage> IndividualWorksheetDamage { get; set; }
-        public DbSet<LocationType> LocationType { get; set; }
+        public DbSet<SBALocationType> SBALocationType { get; set; }
         public DbSet<SBAEconInjurySurvey> SBAEconInjurySurvey { get; set; }
         public DbSet<SBAPhotos> SBAPhotos { get; set; }
         public DbSet<SBAPropertyMarketValue> SBAPropertyMarketValue { get;  set;}

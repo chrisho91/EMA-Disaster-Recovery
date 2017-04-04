@@ -27,6 +27,18 @@ namespace EMA.Disaster.Recovery.Controllers
 
             return View();
         }
+
+        public ActionResult NewIndividualWorksheet()
+        {
+            return View();
+        }
+
+        public ActionResult IndividualWorksheetDamages()
+        {
+            return View();
+        }
+
+
     }
 
 }
