@@ -21,7 +21,7 @@ namespace EMA.Disaster.Recovery.Controllers
             return View();
         }
 
-        //Start global
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
@@ -29,6 +29,11 @@ namespace EMA.Disaster.Recovery.Controllers
             return View();
         }
 
+        //Start global
+        public ActionResult NewContact()
+        {
+
+        }
         public ActionResult NewAddress()
         {
             return View();

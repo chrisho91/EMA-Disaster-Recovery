@@ -187,6 +187,10 @@
     <Compile Include="Migrations\201704050258490_Added Master Seed Data for IndividualSystemDamage.Designer.cs">
       <DependentUpon>201704050258490_Added Master Seed Data for IndividualSystemDamage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704051246187_Fixes for seed data.cs" />
+    <Compile Include="Migrations\201704051246187_Fixes for seed data.Designer.cs">
+      <DependentUpon>201704051246187_Fixes for seed data.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Default\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -272,6 +276,7 @@
     <Content Include="Views\Home\NewSBAEconInjurySurvey.cshtml" />
     <Content Include="Views\Home\NewSBAPropertyMarketValue.cshtml" />
     <Content Include="Views\Home\NewSBAPhotos.cshtml" />
+    <Content Include="Views\Home\NewContact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -294,6 +299,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704050258490_Added Master Seed Data for IndividualSystemDamage.resx">
       <DependentUpon>201704050258490_Added Master Seed Data for IndividualSystemDamage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704051246187_Fixes for seed data.resx">
+      <DependentUpon>201704051246187_Fixes for seed data.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -26,8 +26,7 @@ namespace EMA.Disaster.Recovery.Migrations
             //
 
             //Seed data for LocationType
-            context.SBALocationType.AddOrUpdate(
-                x => x.Name,
+            context.SBALocationType.AddOrUpdate(x => x.ID,
                 new SBALocationType { ID = 1, Name = "Single Family"},
                 new SBALocationType { ID = 2, Name = "Multiple Family" },
                 new SBALocationType { ID = 3, Name = "Business" },
@@ -35,8 +34,15 @@ namespace EMA.Disaster.Recovery.Migrations
                 new SBALocationType { ID = 5, Name = "Other" }
                 );
 
+            //Seed data for IndividualWorksheet master records
+            //context.IndividualWorksheet.AddOrUpdate(x => x.ID,
+            //    new IndividualWorksheet { ID = 1, ContactID = 1, Code = 999, LocationNotes = "MasterDependency", PrimaryHome = true, Renter = false, Comments = "Master", FloodInsurance = true, BasementWater = true, Fit
+            //    = true, WaterHeight = 2, AdditionalComments = "Master", AccessorName = "Master",
+            //    }
+            //    );
+
             //Seed data for IndividualSystemDamage
-            context.IndividualSystemDamages.AddOrUpdate(
+            context.IndividualSystemDamages.AddOrUpdate(x => x.ID,
                new IndividualSystemDamages { ID = 1, IndividualWorksheetID = 1, IsMaster = true, System = "Foundation", PropertyType = "Home", PercentReplacementCost = 7 },
                new IndividualSystemDamages { ID = 2, IndividualWorksheetID = 1, IsMaster = true, System = "Floor", PropertyType = "Home", PercentReplacementCost = 16 },
                new IndividualSystemDamages { ID = 3, IndividualWorksheetID = 1, IsMaster = true, System = "Floor", PropertyType = "Mobile Home", PercentReplacementCost = 20 },
