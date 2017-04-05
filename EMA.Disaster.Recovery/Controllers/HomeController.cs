@@ -113,6 +113,12 @@ namespace EMA.Disaster.Recovery.Controllers
             return View();
         }
 
+        public ActionResult ViewSBAWorksheet()
+        {
+            SBAWorksheet worksheet = new SBAWorksheet();
+            return View(worksheet);
+        }
+
         public ActionResult NewSBALocationType()
         {
             return View();
