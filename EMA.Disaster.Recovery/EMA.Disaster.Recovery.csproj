@@ -180,6 +180,10 @@
     <Compile Include="Migrations\201704051621530_Initial.Designer.cs">
       <DependentUpon>201704051621530_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704051913068_Seed Data for County Municipality.cs" />
+    <Compile Include="Migrations\201704051913068_Seed Data for County Municipality.Designer.cs">
+      <DependentUpon>201704051913068_Seed Data for County Municipality.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Default\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -291,6 +295,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201704051621530_Initial.resx">
       <DependentUpon>201704051621530_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704051913068_Seed Data for County Municipality.resx">
+      <DependentUpon>201704051913068_Seed Data for County Municipality.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
