@@ -265,6 +265,9 @@
     <Content Include="Views\Home\NewSBAPropertyMarketValue.cshtml" />
     <Content Include="Views\Home\NewSBAPhotos.cshtml" />
     <Content Include="Views\Home\NewContact.cshtml" />
+    <Content Include="Views\Home\ChooseFormType.cshtml" />
+    <Content Include="Views\Home\NewSBASummary.cshtml" />
+    <Content Include="Views\Home\NewIndividualSummary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

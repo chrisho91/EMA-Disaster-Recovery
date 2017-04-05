@@ -30,6 +30,10 @@ namespace EMA.Disaster.Recovery.Controllers
         }
 
         //Start global
+        public ActionResult ChooseFormType()
+        {
+            return View(); 
+        }
         public ActionResult NewContact()
         {
             return View();
@@ -92,6 +96,16 @@ namespace EMA.Disaster.Recovery.Controllers
             return View();
         }
 
+        //Start Master Admin Views
+        public ActionResult NewSBASummary()
+        {
+            return View();
+        }
+
+        public ActionResult NewIndividualSummary()
+        {
+            return View();
+        }
     }
 
 }
