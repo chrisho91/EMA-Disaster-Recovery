@@ -46,7 +46,9 @@ namespace EMA.Disaster.Recovery.Migrations
 
             //Seed data for address table 
             context.CountyMunicipalities.AddOrUpdate(x => x.ID,
-                new CountyMunicipality { ID = 1, County = "Master", Municipality = "Master"}
+                new CountyMunicipality { ID = 1, County = "Master", Municipality = "Master"},
+                new CountyMunicipality { ID = 2, County = "Allegheny", Municipality = "Pittsburgh" },
+                new CountyMunicipality { ID = 2, County = "Allegheny", Municipality = "Tarentum" }
                 );
 
             //Seed data for IndividualSystemDamage
