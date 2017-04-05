@@ -21,10 +21,22 @@ namespace EMA.Disaster.Recovery.Controllers
             return View();
         }
 
+        //Start global
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+
+        public ActionResult NewAddress()
+        {
+            return View();
+        }
+
+        //Start individual views
+        public ActionResult NewCountyMunicipality()
+        {
             return View();
         }
 
@@ -33,11 +45,46 @@ namespace EMA.Disaster.Recovery.Controllers
             return View();
         }
 
-        public ActionResult IndividualWorksheetDamages()
+        public ActionResult NewIndividualSystemDamages()
         {
             return View();
         }
 
+        public ActionResult NewIndividualWorksheetDamage()
+        {
+            return View();
+        }
+
+        public ActionResult NewIndividualPhotos()
+        {
+            return View();
+        }
+
+        //Start SBA views
+        public ActionResult NewSBAWorksheet()
+        {
+            return View();
+        }
+
+        public ActionResult NewSBALocationType()
+        {
+            return View();
+        }
+
+        public ActionResult NewSBAEconInjurySurvey()
+        {
+            return View();
+        }
+
+        public ActionResult NewSBAPropertyMarketValue()
+        {
+            return View();
+        }
+
+        public ActionResult NewSBAPhotos()
+        {
+            return View();
+        }
 
     }
 

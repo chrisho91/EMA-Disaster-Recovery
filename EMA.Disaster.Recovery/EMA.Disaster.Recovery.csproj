@@ -249,8 +249,17 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\NewIndividualWorksheet.cshtml" />
     <Content Include="Views\Home\CreateIndividualWorksheetDamages.cshtml" />
+    <Content Include="Views\Home\NewAddress.cshtml" />
+    <Content Include="Views\Home\NewIndividualSystemDamages.cshtml" />
+    <Content Include="Views\Home\NewIndividualWorksheetDamage.cshtml" />
+    <Content Include="Views\Home\NewIndividualPhotos.cshtml" />
+    <Content Include="Views\Home\NewCountyMunicipality.cshtml" />
+    <Content Include="Views\Home\NewSBAWorksheet.cshtml" />
+    <Content Include="Views\Home\NewSBALocationType.cshtml" />
+    <Content Include="Views\Home\NewSBAEconInjurySurvey.cshtml" />
+    <Content Include="Views\Home\NewSBAPropertyMarketValue.cshtml" />
+    <Content Include="Views\Home\NewSBAPhotos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
