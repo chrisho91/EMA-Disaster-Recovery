@@ -34,12 +34,20 @@ namespace EMA.Disaster.Recovery.Migrations
                 new SBALocationType { ID = 5, Name = "Other" }
                 );
 
-            //Seed data for IndividualWorksheet master records
-            //context.IndividualWorksheet.AddOrUpdate(x => x.ID,
-            //    new IndividualWorksheet { ID = 1, ContactID = 1, Code = 999, LocationNotes = "MasterDependency", PrimaryHome = true, Renter = false, Comments = "Master", FloodInsurance = true, BasementWater = true, Fit
-            //    = true, WaterHeight = 2, AdditionalComments = "Master", AccessorName = "Master",
-            //    }
-            //    );
+            //Seed data for address table 
+            context.Addresses.AddOrUpdate(x => x.ID,
+                new Address { ID = 1, CountyMunicipalityID = 1, StreetAddress = "2 Master Way", City = "Master", State = "Master", Zip = "123123", Longitude = 12312312, Lattitude = 12312312 }
+                );
+
+            //Seed data for contacts table 
+            context.Contacts.AddOrUpdate(x => x.ID,
+                new Contact { ID = 1, AddressID = 1, FirstName = "Master", LastName = "Master", Phone = "1231234123", Phone2 = "1231234123", Email = "Master" }
+                );
+
+            //Seed data for address table 
+            context.CountyMunicipalities.AddOrUpdate(x => x.ID,
+                new CountyMunicipality { ID = 1, County = "Master", Municipality = "Master"}
+                );
 
             //Seed data for IndividualSystemDamage
             context.IndividualSystemDamages.AddOrUpdate(x => x.ID,
@@ -56,6 +64,18 @@ namespace EMA.Disaster.Recovery.Migrations
                new IndividualSystemDamages { ID = 11, IndividualWorksheetID = 1, IsMaster = true, System = "Heating AC", PropertyType = "Home", PercentReplacementCost = 10 },
                new IndividualSystemDamages { ID = 12, IndividualWorksheetID = 1, IsMaster = true, System = "Electrical", PropertyType = "Home", PercentReplacementCost = 6 }
                );
+
+            //Seed data for IndividualWorksheet master records
+            context.IndividualWorksheetDamage.AddOrUpdate(x => x.ID,
+                new IndividualWorksheetDamage
+                { ID = 1, IndividualWorksheetID = 1, PropertyType = "Master", DamageCategory = "Master", Damaged = true, EstReplacementCost = 122, EstStructuralDamage = 232, EstDamageToContents = 76, EstTotalDamage = 234 }
+                );
+
+            //Seed data for IndividualWorksheet master records
+            context.IndividualWorksheet.AddOrUpdate(x => x.ID,
+                new IndividualWorksheet
+                { ID = 1, ContactID = 1, Code = 999, LocationNotes = "MasterDependency", PrimaryHome = true, Renter = false, Comments = "Master", FloodInsurance = true, BasementWater = true, FirstFloorWater = true, WaterHeight = 2, AdditionalComments = "Master", AccessorName = "Master", Date = "Master", IndividualWorksheetDamageID = 1 }
+                );
         }
     }
 }

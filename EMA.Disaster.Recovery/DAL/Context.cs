@@ -41,9 +41,9 @@ namespace EMA.Disaster.Recovery.DAL
                 .HasRequired(t => t.IndividualWorksheet)
                 .WithRequiredPrincipal();
 
-            // Configure the relationship between SBAWorksheet and SBAPropertyMarketValue
-            modelBuilder.Entity<SBAWorksheet>()
-                .HasKey(t => t.SBAPropertyMarketValueID);
+            //// Configure the relationship between SBAWorksheet and SBAPropertyMarketValue
+            //modelBuilder.Entity<SBAWorksheet>()
+            //    .HasKey(t => t.ID);
 
             modelBuilder.Entity<SBAPropertyMarketValue>()
                 .HasRequired(t => t.SBAWorksheet)

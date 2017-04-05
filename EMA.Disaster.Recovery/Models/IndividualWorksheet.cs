@@ -19,7 +19,7 @@ namespace EMA.Disaster.Recovery.Models
         public int WaterHeight { get; set; }
         public string AdditionalComments { get; set; }
         public string AccessorName { get; set; }
-        public DateTime Date { get; set; }
+        public string Date { get; set; }
 
         public virtual Contact Contact { get; set; }
         public virtual IndividualWorksheetDamage IndividualWorksheetDamage { get; set; }

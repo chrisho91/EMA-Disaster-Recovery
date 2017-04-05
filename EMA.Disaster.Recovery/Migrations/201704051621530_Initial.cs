@@ -82,7 +82,7 @@ namespace EMA.Disaster.Recovery.Migrations
                         WaterHeight = c.Int(nullable: false),
                         AdditionalComments = c.String(),
                         AccessorName = c.String(),
-                        Date = c.DateTime(nullable: false),
+                        Date = c.String(),
                         IndividualWorksheetDamage_ID = c.Int(),
                     })
                 .PrimaryKey(t => t.IndividualWorksheetDamageID)
@@ -114,7 +114,7 @@ namespace EMA.Disaster.Recovery.Migrations
                     {
                         ID = c.Int(nullable: false, identity: true),
                         IndividualWorksheetID = c.Int(nullable: false),
-                        PropertyType = c.Int(nullable: false),
+                        PropertyType = c.String(),
                         DamageCategory = c.String(),
                         Damaged = c.Boolean(nullable: false),
                         EstReplacementCost = c.Int(nullable: false),
@@ -163,39 +163,37 @@ namespace EMA.Disaster.Recovery.Migrations
                         ID = c.Int(nullable: false, identity: true),
                         SBAWorksheetID = c.Int(nullable: false),
                         PhotoUrl = c.String(),
-                        SBAWorksheet_SBAPropertyMarketValueID = c.Int(),
                     })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.SBAWorksheet", t => t.SBAWorksheet_SBAPropertyMarketValueID)
-                .Index(t => t.SBAWorksheet_SBAPropertyMarketValueID);
+                .ForeignKey("dbo.SBAWorksheet", t => t.SBAWorksheetID, cascadeDelete: true)
+                .Index(t => t.SBAWorksheetID);
             
             CreateTable(
                 "dbo.SBAWorksheet",
                 c => new
                     {
-                        SBAPropertyMarketValueID = c.Int(nullable: false),
                         ID = c.Int(nullable: false),
                         ContactID = c.Int(nullable: false),
                         SBALocationTypeID = c.Int(nullable: false),
                         SBAEconInjurySurveyID = c.Int(nullable: false),
+                        SBAPropertyMarketValueID = c.Int(nullable: false),
                         PropertyOwner = c.String(),
                         DisasterDate = c.DateTime(nullable: false),
                         DisasterType = c.String(),
                         ApplicantType = c.String(),
                         Comments = c.String(),
-                        SBAPropertyMarketValue_ID = c.Int(),
                     })
-                .PrimaryKey(t => t.SBAPropertyMarketValueID)
+                .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Contact", t => t.ContactID, cascadeDelete: true)
-                .ForeignKey("dbo.SBALocationType", t => t.ID, cascadeDelete: true)
+                .ForeignKey("dbo.SBALocationType", t => t.SBALocationTypeID, cascadeDelete: true)
                 .ForeignKey("dbo.SBAEconInjurySurvey", t => t.SBAEconInjurySurveyID, cascadeDelete: true)
-                .ForeignKey("dbo.SBAPropertyMarketValue", t => t.SBAPropertyMarketValueID)
-                .ForeignKey("dbo.SBAPropertyMarketValue", t => t.SBAPropertyMarketValue_ID)
-                .Index(t => t.SBAPropertyMarketValueID)
+                .ForeignKey("dbo.SBAPropertyMarketValue", t => t.ID)
+                .ForeignKey("dbo.SBAPropertyMarketValue", t => t.SBAPropertyMarketValueID, cascadeDelete: true)
                 .Index(t => t.ID)
                 .Index(t => t.ContactID)
+                .Index(t => t.SBALocationTypeID)
                 .Index(t => t.SBAEconInjurySurveyID)
-                .Index(t => t.SBAPropertyMarketValue_ID);
+                .Index(t => t.SBAPropertyMarketValueID);
             
             CreateTable(
                 "dbo.SBAPropertyMarketValue",
@@ -213,11 +211,11 @@ namespace EMA.Disaster.Recovery.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.SBAPhotos", "SBAWorksheet_SBAPropertyMarketValueID", "dbo.SBAWorksheet");
-            DropForeignKey("dbo.SBAWorksheet", "SBAPropertyMarketValue_ID", "dbo.SBAPropertyMarketValue");
+            DropForeignKey("dbo.SBAPhotos", "SBAWorksheetID", "dbo.SBAWorksheet");
             DropForeignKey("dbo.SBAWorksheet", "SBAPropertyMarketValueID", "dbo.SBAPropertyMarketValue");
+            DropForeignKey("dbo.SBAWorksheet", "ID", "dbo.SBAPropertyMarketValue");
             DropForeignKey("dbo.SBAWorksheet", "SBAEconInjurySurveyID", "dbo.SBAEconInjurySurvey");
-            DropForeignKey("dbo.SBAWorksheet", "ID", "dbo.SBALocationType");
+            DropForeignKey("dbo.SBAWorksheet", "SBALocationTypeID", "dbo.SBALocationType");
             DropForeignKey("dbo.SBAWorksheet", "ContactID", "dbo.Contact");
             DropForeignKey("dbo.IndividualPhotos", "IndividualWorksheet_IndividualWorksheetDamageID", "dbo.IndividualWorksheet");
             DropForeignKey("dbo.IndividualWorksheet", "IndividualWorksheetDamage_ID", "dbo.IndividualWorksheetDamage");
@@ -226,12 +224,12 @@ namespace EMA.Disaster.Recovery.Migrations
             DropForeignKey("dbo.IndividualWorksheet", "ContactID", "dbo.Contact");
             DropForeignKey("dbo.Contact", "AddressID", "dbo.Address");
             DropForeignKey("dbo.Address", "CountyMunicipalityID", "dbo.CountyMunicipality");
-            DropIndex("dbo.SBAWorksheet", new[] { "SBAPropertyMarketValue_ID" });
+            DropIndex("dbo.SBAWorksheet", new[] { "SBAPropertyMarketValueID" });
             DropIndex("dbo.SBAWorksheet", new[] { "SBAEconInjurySurveyID" });
+            DropIndex("dbo.SBAWorksheet", new[] { "SBALocationTypeID" });
             DropIndex("dbo.SBAWorksheet", new[] { "ContactID" });
             DropIndex("dbo.SBAWorksheet", new[] { "ID" });
-            DropIndex("dbo.SBAWorksheet", new[] { "SBAPropertyMarketValueID" });
-            DropIndex("dbo.SBAPhotos", new[] { "SBAWorksheet_SBAPropertyMarketValueID" });
+            DropIndex("dbo.SBAPhotos", new[] { "SBAWorksheetID" });
             DropIndex("dbo.IndividualSystemDamages", new[] { "IndividualWorksheetID" });
             DropIndex("dbo.IndividualWorksheet", new[] { "IndividualWorksheetDamage_ID" });
             DropIndex("dbo.IndividualWorksheet", new[] { "ContactID" });

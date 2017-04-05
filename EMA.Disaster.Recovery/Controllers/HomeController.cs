@@ -32,8 +32,9 @@ namespace EMA.Disaster.Recovery.Controllers
         //Start global
         public ActionResult NewContact()
         {
-
+            return View();
         }
+
         public ActionResult NewAddress()
         {
             return View();

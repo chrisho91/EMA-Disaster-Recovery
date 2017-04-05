@@ -5,7 +5,7 @@ namespace EMA.Disaster.Recovery.Models
     {
         public int ID { get; set; }
         public int IndividualWorksheetID { get; set; }
-        public int PropertyType { get; set; }
+        public string PropertyType { get; set; }
         public string DamageCategory { get; set; }
         public bool Damaged { get; set; }
         public int EstReplacementCost { get; set; }
