@@ -175,6 +175,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704050140425_Initial.cs" />
+    <Compile Include="Migrations\201704050140425_Initial.Designer.cs">
+      <DependentUpon>201704050140425_Initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Default\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -249,12 +253,12 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\CreateIndividualWorksheetDamages.cshtml" />
     <Content Include="Views\Home\NewAddress.cshtml" />
+    <Content Include="Views\Home\NewCountyMunicipality.cshtml" />
+    <Content Include="Views\Home\NewIndividualWorksheet.cshtml" />
     <Content Include="Views\Home\NewIndividualSystemDamages.cshtml" />
     <Content Include="Views\Home\NewIndividualWorksheetDamage.cshtml" />
     <Content Include="Views\Home\NewIndividualPhotos.cshtml" />
-    <Content Include="Views\Home\NewCountyMunicipality.cshtml" />
     <Content Include="Views\Home\NewSBAWorksheet.cshtml" />
     <Content Include="Views\Home\NewSBALocationType.cshtml" />
     <Content Include="Views\Home\NewSBAEconInjurySurvey.cshtml" />
@@ -272,6 +276,11 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201704050140425_Initial.resx">
+      <DependentUpon>201704050140425_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

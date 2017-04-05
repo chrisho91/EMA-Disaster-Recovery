@@ -27,6 +27,27 @@ namespace EMA.Disaster.Recovery.DAL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>(); 
+            //Setup one-to-many relationship between Individual Worksheet and Individual System Damages
+            modelBuilder.Entity<IndividualSystemDamages>()
+                .HasRequired(c => c.IndividualWorksheet)
+                .WithMany(d => d.IndividualSystemDamages)
+                .HasForeignKey(c => c.IndividualWorksheetID);
+
+            // Configure the rlationship between the Individual Worksheet and the Individual Worksheet Damage
+            modelBuilder.Entity<IndividualWorksheet>()
+                .HasKey(t => t.IndividualWorksheetDamageID);
+
+            modelBuilder.Entity<IndividualWorksheetDamage>()
+                .HasRequired(t => t.IndividualWorksheet)
+                .WithRequiredPrincipal();
+
+            // Configure the relationship between SBAWorksheet and SBAPropertyMarketValue
+            modelBuilder.Entity<SBAWorksheet>()
+                .HasKey(t => t.SBAPropertyMarketValueID);
+
+            modelBuilder.Entity<SBAPropertyMarketValue>()
+                .HasRequired(t => t.SBAWorksheet)
+                .WithRequiredPrincipal();
         }
 
     }
