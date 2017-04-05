@@ -179,6 +179,10 @@
     <Compile Include="Migrations\201704050140425_Initial.Designer.cs">
       <DependentUpon>201704050140425_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704050210537_Seed Data for LocationType.cs" />
+    <Compile Include="Migrations\201704050210537_Seed Data for LocationType.Designer.cs">
+      <DependentUpon>201704050210537_Seed Data for LocationType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Default\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -280,6 +284,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201704050140425_Initial.resx">
       <DependentUpon>201704050140425_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704050210537_Seed Data for LocationType.resx">
+      <DependentUpon>201704050210537_Seed Data for LocationType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

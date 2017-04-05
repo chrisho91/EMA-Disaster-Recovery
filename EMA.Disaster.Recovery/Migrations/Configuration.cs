@@ -1,9 +1,7 @@
 namespace EMA.Disaster.Recovery.Migrations
 {
-    using System;
-    using System.Data.Entity;
+    using Models;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<EMA.Disaster.Recovery.DAL.Context>
     {
@@ -26,6 +24,15 @@ namespace EMA.Disaster.Recovery.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            context.SBALocationType.AddOrUpdate(
+                x => x.Name,
+                new SBALocationType { ID = 1, Name = "Single Family"},
+                new SBALocationType { ID = 2, Name = "Multiple Family" },
+                new SBALocationType { ID = 3, Name = "Business" },
+                new SBALocationType { ID = 4, Name = "NonProfit" },
+                new SBALocationType { ID = 5, Name = "Other" }
+                );
         }
     }
 }
