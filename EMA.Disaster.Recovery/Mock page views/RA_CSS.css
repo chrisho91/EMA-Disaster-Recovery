@@ -1,12 +1,13 @@
-
 body{
     background-color: #D3D3D3;
     }
 
 .pagetitle{
-    padding-top: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     background-color: blue;
     border-style: solid;
+    border-radius: 15px;
     text-align: center;
     font-weight: bold;
     font-size: 30pt;
@@ -14,11 +15,11 @@ body{
     }
 
 h1{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 label{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     font-size: 16pt;
     display: inline-block;
     clear: left;
@@ -51,7 +52,7 @@ input[type='date']
 
 .round{
     border-radius: 20px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     background-color: white;
     }
 
@@ -71,4 +72,16 @@ color: red;
 
 .space{
     font-size: 18pt;
+}
+
+.rowborder{
+    border: 1px solid;
+}
+
+.ital{
+    font-style: italic; 
+}
+
+.cent{
+    text-align: center;
 }
