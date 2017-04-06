@@ -8,11 +8,10 @@ namespace EMA.Disaster.Recovery.Migrations
         public override void Up()
         {
             CreateTable(
-                "dbo.Address",
+                "dbo.Addresses",
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        CountyMunicipalityID = c.Int(nullable: false),
                         StreetAddress = c.String(),
                         StreetAddress2 = c.String(),
                         City = c.String(),
@@ -20,13 +19,14 @@ namespace EMA.Disaster.Recovery.Migrations
                         Zip = c.String(),
                         Longitude = c.Single(nullable: false),
                         Lattitude = c.Single(nullable: false),
+                        CountyMunicipality_ID = c.Int(),
                     })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.CountyMunicipality", t => t.CountyMunicipalityID, cascadeDelete: true)
-                .Index(t => t.CountyMunicipalityID);
+                .ForeignKey("dbo.CountyMunicipalities", t => t.CountyMunicipality_ID)
+                .Index(t => t.CountyMunicipality_ID);
             
             CreateTable(
-                "dbo.CountyMunicipality",
+                "dbo.CountyMunicipalities",
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
@@ -36,84 +36,76 @@ namespace EMA.Disaster.Recovery.Migrations
                 .PrimaryKey(t => t.ID);
             
             CreateTable(
-                "dbo.Contact",
+                "dbo.Contacts",
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        AddressID = c.Int(nullable: false),
                         FirstName = c.String(),
                         LastName = c.String(),
                         Phone = c.String(),
                         Phone2 = c.String(),
                         Email = c.String(),
+                        Address_ID = c.Int(),
                     })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Address", t => t.AddressID, cascadeDelete: true)
-                .Index(t => t.AddressID);
+                .ForeignKey("dbo.Addresses", t => t.Address_ID)
+                .Index(t => t.Address_ID);
             
             CreateTable(
                 "dbo.IndividualPhotos",
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        IndividualWorksheetID = c.Int(nullable: false),
                         PhotoUrl = c.String(),
-                        IndividualWorksheet_IndividualWorksheetDamageID = c.Int(),
+                        IndividualWorksheet_ID = c.Int(),
                     })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.IndividualWorksheet", t => t.IndividualWorksheet_IndividualWorksheetDamageID)
-                .Index(t => t.IndividualWorksheet_IndividualWorksheetDamageID);
+                .ForeignKey("dbo.IndividualWorksheets", t => t.IndividualWorksheet_ID)
+                .Index(t => t.IndividualWorksheet_ID);
             
             CreateTable(
-                "dbo.IndividualWorksheet",
+                "dbo.IndividualWorksheets",
                 c => new
                     {
-                        IndividualWorksheetDamageID = c.Int(nullable: false),
-                        ID = c.Int(nullable: false),
-                        ContactID = c.Int(nullable: false),
+                        ID = c.Int(nullable: false, identity: true),
                         Code = c.Int(nullable: false),
                         LocationNotes = c.String(),
                         PrimaryHome = c.Boolean(nullable: false),
                         Renter = c.Boolean(nullable: false),
                         Comments = c.String(),
                         FloodInsurance = c.Boolean(nullable: false),
-                        BasementWater = c.Boolean(nullable: false),
-                        FirstFloorWater = c.Boolean(nullable: false),
+                        BasementWater = c.Int(nullable: false),
+                        FirstFloorWater = c.Int(nullable: false),
                         WaterHeight = c.Int(nullable: false),
                         AdditionalComments = c.String(),
                         AccessorName = c.String(),
                         Date = c.String(),
-                        IndividualWorksheetDamage_ID = c.Int(),
+                        Contact_ID = c.Int(),
                     })
-                .PrimaryKey(t => t.IndividualWorksheetDamageID)
-                .ForeignKey("dbo.Contact", t => t.ContactID, cascadeDelete: true)
-                .ForeignKey("dbo.IndividualWorksheetDamage", t => t.IndividualWorksheetDamageID)
-                .ForeignKey("dbo.IndividualWorksheetDamage", t => t.IndividualWorksheetDamage_ID)
-                .Index(t => t.IndividualWorksheetDamageID)
-                .Index(t => t.ContactID)
-                .Index(t => t.IndividualWorksheetDamage_ID);
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Contacts", t => t.Contact_ID)
+                .Index(t => t.Contact_ID);
             
             CreateTable(
                 "dbo.IndividualSystemDamages",
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        IndividualWorksheetID = c.Int(nullable: false),
                         IsMaster = c.Boolean(nullable: false),
                         System = c.String(),
                         PropertyType = c.String(),
                         PercentReplacementCost = c.Int(nullable: false),
+                        IndividualWorksheet_ID = c.Int(),
                     })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.IndividualWorksheet", t => t.IndividualWorksheetID, cascadeDelete: true)
-                .Index(t => t.IndividualWorksheetID);
+                .ForeignKey("dbo.IndividualWorksheets", t => t.IndividualWorksheet_ID)
+                .Index(t => t.IndividualWorksheet_ID);
             
             CreateTable(
-                "dbo.IndividualWorksheetDamage",
+                "dbo.IndividualWorksheetDamages",
                 c => new
                     {
-                        ID = c.Int(nullable: false, identity: true),
-                        IndividualWorksheetID = c.Int(nullable: false),
+                        ID = c.Int(nullable: false),
                         PropertyType = c.String(),
                         DamageCategory = c.String(),
                         Damaged = c.Boolean(nullable: false),
@@ -122,10 +114,12 @@ namespace EMA.Disaster.Recovery.Migrations
                         EstDamageToContents = c.Int(nullable: false),
                         EstTotalDamage = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.ID);
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.IndividualWorksheets", t => t.ID)
+                .Index(t => t.ID);
             
             CreateTable(
-                "dbo.SBAEconInjurySurvey",
+                "dbo.SBAEconInjurySurveys",
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
@@ -148,7 +142,7 @@ namespace EMA.Disaster.Recovery.Migrations
                 .PrimaryKey(t => t.ID);
             
             CreateTable(
-                "dbo.SBALocationType",
+                "dbo.SBALocationTypes",
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
@@ -165,45 +159,50 @@ namespace EMA.Disaster.Recovery.Migrations
                         PhotoUrl = c.String(),
                     })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.SBAWorksheet", t => t.SBAWorksheetID, cascadeDelete: true)
+                .ForeignKey("dbo.SBAWorksheets", t => t.SBAWorksheetID, cascadeDelete: true)
                 .Index(t => t.SBAWorksheetID);
             
             CreateTable(
-                "dbo.SBAWorksheet",
+                "dbo.SBAWorksheets",
                 c => new
                     {
                         ID = c.Int(nullable: false),
-                        ContactID = c.Int(nullable: false),
-                        SBALocationTypeID = c.Int(nullable: false),
-                        SBAEconInjurySurveyID = c.Int(nullable: false),
-                        SBAPropertyMarketValueID = c.Int(nullable: false),
                         PropertyOwner = c.String(),
                         DisasterDate = c.DateTime(nullable: false),
                         DisasterType = c.String(),
                         ApplicantType = c.String(),
                         Comments = c.String(),
+                        Contact_ID = c.Int(),
+                        LocationType_ID = c.Int(),
+                        SBAEconInjurySurvey_ID = c.Int(),
+                        SBAPropertyMarketValue_ID = c.Int(),
                     })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Contact", t => t.ContactID, cascadeDelete: true)
-                .ForeignKey("dbo.SBALocationType", t => t.SBALocationTypeID, cascadeDelete: true)
-                .ForeignKey("dbo.SBAEconInjurySurvey", t => t.SBAEconInjurySurveyID, cascadeDelete: true)
-                .ForeignKey("dbo.SBAPropertyMarketValue", t => t.ID)
-                .ForeignKey("dbo.SBAPropertyMarketValue", t => t.SBAPropertyMarketValueID, cascadeDelete: true)
+                .ForeignKey("dbo.Contacts", t => t.Contact_ID)
+                .ForeignKey("dbo.SBALocationTypes", t => t.LocationType_ID)
+                .ForeignKey("dbo.SBAEconInjurySurveys", t => t.SBAEconInjurySurvey_ID)
+                .ForeignKey("dbo.SBAPropertyMarketValues", t => t.ID)
+                .ForeignKey("dbo.SBAPropertyMarketValues", t => t.SBAPropertyMarketValue_ID)
                 .Index(t => t.ID)
-                .Index(t => t.ContactID)
-                .Index(t => t.SBALocationTypeID)
-                .Index(t => t.SBAEconInjurySurveyID)
-                .Index(t => t.SBAPropertyMarketValueID);
+                .Index(t => t.Contact_ID)
+                .Index(t => t.LocationType_ID)
+                .Index(t => t.SBAEconInjurySurvey_ID)
+                .Index(t => t.SBAPropertyMarketValue_ID);
             
             CreateTable(
-                "dbo.SBAPropertyMarketValue",
+                "dbo.SBAPropertyMarketValues",
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        SBAWorksheetID = c.Int(nullable: false),
-                        PropertySection = c.String(),
-                        DisasterLoss = c.Int(nullable: false),
-                        InsuranceAmount = c.Int(nullable: false),
+                        PropertySectionStructure = c.String(),
+                        PropertySectionContent = c.String(),
+                        PropertySectionLand = c.String(),
+                        DisasterLossStructures = c.Int(nullable: false),
+                        DisasterLossContent = c.Int(nullable: false),
+                        DisasterLossLand = c.Int(nullable: false),
+                        InsuranceAmountStructures = c.Int(nullable: false),
+                        InsuranceAmountContent = c.Int(nullable: false),
+                        InsuranceAmountLand = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.ID);
             
@@ -211,44 +210,42 @@ namespace EMA.Disaster.Recovery.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.SBAPhotos", "SBAWorksheetID", "dbo.SBAWorksheet");
-            DropForeignKey("dbo.SBAWorksheet", "SBAPropertyMarketValueID", "dbo.SBAPropertyMarketValue");
-            DropForeignKey("dbo.SBAWorksheet", "ID", "dbo.SBAPropertyMarketValue");
-            DropForeignKey("dbo.SBAWorksheet", "SBAEconInjurySurveyID", "dbo.SBAEconInjurySurvey");
-            DropForeignKey("dbo.SBAWorksheet", "SBALocationTypeID", "dbo.SBALocationType");
-            DropForeignKey("dbo.SBAWorksheet", "ContactID", "dbo.Contact");
-            DropForeignKey("dbo.IndividualPhotos", "IndividualWorksheet_IndividualWorksheetDamageID", "dbo.IndividualWorksheet");
-            DropForeignKey("dbo.IndividualWorksheet", "IndividualWorksheetDamage_ID", "dbo.IndividualWorksheetDamage");
-            DropForeignKey("dbo.IndividualWorksheet", "IndividualWorksheetDamageID", "dbo.IndividualWorksheetDamage");
-            DropForeignKey("dbo.IndividualSystemDamages", "IndividualWorksheetID", "dbo.IndividualWorksheet");
-            DropForeignKey("dbo.IndividualWorksheet", "ContactID", "dbo.Contact");
-            DropForeignKey("dbo.Contact", "AddressID", "dbo.Address");
-            DropForeignKey("dbo.Address", "CountyMunicipalityID", "dbo.CountyMunicipality");
-            DropIndex("dbo.SBAWorksheet", new[] { "SBAPropertyMarketValueID" });
-            DropIndex("dbo.SBAWorksheet", new[] { "SBAEconInjurySurveyID" });
-            DropIndex("dbo.SBAWorksheet", new[] { "SBALocationTypeID" });
-            DropIndex("dbo.SBAWorksheet", new[] { "ContactID" });
-            DropIndex("dbo.SBAWorksheet", new[] { "ID" });
+            DropForeignKey("dbo.SBAPhotos", "SBAWorksheetID", "dbo.SBAWorksheets");
+            DropForeignKey("dbo.SBAWorksheets", "SBAPropertyMarketValue_ID", "dbo.SBAPropertyMarketValues");
+            DropForeignKey("dbo.SBAWorksheets", "ID", "dbo.SBAPropertyMarketValues");
+            DropForeignKey("dbo.SBAWorksheets", "SBAEconInjurySurvey_ID", "dbo.SBAEconInjurySurveys");
+            DropForeignKey("dbo.SBAWorksheets", "LocationType_ID", "dbo.SBALocationTypes");
+            DropForeignKey("dbo.SBAWorksheets", "Contact_ID", "dbo.Contacts");
+            DropForeignKey("dbo.IndividualPhotos", "IndividualWorksheet_ID", "dbo.IndividualWorksheets");
+            DropForeignKey("dbo.IndividualWorksheetDamages", "ID", "dbo.IndividualWorksheets");
+            DropForeignKey("dbo.IndividualSystemDamages", "IndividualWorksheet_ID", "dbo.IndividualWorksheets");
+            DropForeignKey("dbo.IndividualWorksheets", "Contact_ID", "dbo.Contacts");
+            DropForeignKey("dbo.Contacts", "Address_ID", "dbo.Addresses");
+            DropForeignKey("dbo.Addresses", "CountyMunicipality_ID", "dbo.CountyMunicipalities");
+            DropIndex("dbo.SBAWorksheets", new[] { "SBAPropertyMarketValue_ID" });
+            DropIndex("dbo.SBAWorksheets", new[] { "SBAEconInjurySurvey_ID" });
+            DropIndex("dbo.SBAWorksheets", new[] { "LocationType_ID" });
+            DropIndex("dbo.SBAWorksheets", new[] { "Contact_ID" });
+            DropIndex("dbo.SBAWorksheets", new[] { "ID" });
             DropIndex("dbo.SBAPhotos", new[] { "SBAWorksheetID" });
-            DropIndex("dbo.IndividualSystemDamages", new[] { "IndividualWorksheetID" });
-            DropIndex("dbo.IndividualWorksheet", new[] { "IndividualWorksheetDamage_ID" });
-            DropIndex("dbo.IndividualWorksheet", new[] { "ContactID" });
-            DropIndex("dbo.IndividualWorksheet", new[] { "IndividualWorksheetDamageID" });
-            DropIndex("dbo.IndividualPhotos", new[] { "IndividualWorksheet_IndividualWorksheetDamageID" });
-            DropIndex("dbo.Contact", new[] { "AddressID" });
-            DropIndex("dbo.Address", new[] { "CountyMunicipalityID" });
-            DropTable("dbo.SBAPropertyMarketValue");
-            DropTable("dbo.SBAWorksheet");
+            DropIndex("dbo.IndividualWorksheetDamages", new[] { "ID" });
+            DropIndex("dbo.IndividualSystemDamages", new[] { "IndividualWorksheet_ID" });
+            DropIndex("dbo.IndividualWorksheets", new[] { "Contact_ID" });
+            DropIndex("dbo.IndividualPhotos", new[] { "IndividualWorksheet_ID" });
+            DropIndex("dbo.Contacts", new[] { "Address_ID" });
+            DropIndex("dbo.Addresses", new[] { "CountyMunicipality_ID" });
+            DropTable("dbo.SBAPropertyMarketValues");
+            DropTable("dbo.SBAWorksheets");
             DropTable("dbo.SBAPhotos");
-            DropTable("dbo.SBALocationType");
-            DropTable("dbo.SBAEconInjurySurvey");
-            DropTable("dbo.IndividualWorksheetDamage");
+            DropTable("dbo.SBALocationTypes");
+            DropTable("dbo.SBAEconInjurySurveys");
+            DropTable("dbo.IndividualWorksheetDamages");
             DropTable("dbo.IndividualSystemDamages");
-            DropTable("dbo.IndividualWorksheet");
+            DropTable("dbo.IndividualWorksheets");
             DropTable("dbo.IndividualPhotos");
-            DropTable("dbo.Contact");
-            DropTable("dbo.CountyMunicipality");
-            DropTable("dbo.Address");
+            DropTable("dbo.Contacts");
+            DropTable("dbo.CountyMunicipalities");
+            DropTable("dbo.Addresses");
         }
     }
 }

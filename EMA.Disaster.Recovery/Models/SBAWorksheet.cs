@@ -6,10 +6,6 @@ namespace EMA.Disaster.Recovery.Models
     public class SBAWorksheet
     {
         public int ID { get; set; }
-        public int ContactID { get; set; }
-        public int SBALocationTypeID { get; set; }
-        public int SBAEconInjurySurveyID { get; set; }
-        public int SBAPropertyMarketValueID { get; set; }
         public string PropertyOwner { get; set; }
         public DateTime DisasterDate { get; set; }
         public string DisasterType { get; set; }

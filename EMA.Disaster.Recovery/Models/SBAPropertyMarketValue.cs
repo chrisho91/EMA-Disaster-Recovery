@@ -4,7 +4,6 @@ namespace EMA.Disaster.Recovery.Models
     public class SBAPropertyMarketValue
     {
         public int ID { get; set; }
-        public int SBAWorksheetID { get; set; }
         public string PropertySectionStructure { get; set; }
         public string PropertySectionContent { get; set; }
         public string PropertySectionLand { get; set; }
