@@ -1,14 +1,12 @@
 <html>
 	<head>
-	<title>
-	contact info
-	</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<link href="RA_CSS.css" rel="stylesheet" type="text/css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-        <script type="text/javascript">
+		<title>Contact Info</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<link href="RA_CSS.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+		<script type="text/javascript">
             $(document).ready(function(){
                 $("#County").on("change",function(){
                     $("#municipality").html("");
@@ -31,118 +29,119 @@
                 });
             });
         </script>
-</head>
+	</head>
+
 <body>
 <div class="container">
-
 <form id="rendered-form">
 
-	<div class="">
-		<h1 type="h1" class="header pagetitle" name="" id="">Contact Info</h1>
+<div class="">
+	<h1 type="h1" class="header pagetitle" name="" id="">Contact Information</h1>
+</div>
+
+<div class="row">
+	<div class="fb-text form-group field-first-name  col-sm-offset-0 col-sm-6" >
+	<label for="first-name" class="fb-text-label ">First Name
+	<span class="required">*</span>
+	</label>
 	</div>
-	<div class="row">
-		<div class="fb-text form-group field-first-name  col-xs-offset-0 col-xs-6" >
-		<label for="first-name" class="fb-text-label ">First Name
-		<span class="required">*</span>
-		</label>
-		</div>
-		<div class="fb-text form-group field-first-name col-xs-offset-1 col-xs-5" >
-		<input type="text" required="" class="form-control adjustbox" name="first-name" id="first-name" aria-required="true">
-		</div>
+	<div class="fb-text form-group field-first-name col-sm-offset-1 col-sm-5" >
+	<input type="text" required="" class="form-control adjustbox" name="first-name" id="first-name" aria-required="true">
 	</div>
-	<div class="row">
-		<div class="fb-text form-group field-first-name  col-xs-offset-0 col-xs-6" >
-		<label for="last-name" class="fb-text-label">Last Name
-		<span class="required">*</span></label>
-		</label>
-		</div>
-		<div class="fb-text form-group field-last-name col-xs-offset-1 col-xs-5" >
-		<input type="text" required="" class="form-control adjustbox" name="last-name" id="last-name" aria-required="true">
-		</div>
+</div>
+<div class="row">
+	<div class="fb-text form-group field-first-name  col-sm-offset-0 col-sm-6" >
+	<label for="last-name" class="fb-text-label">Last Name
+	<span class="required">*</span></label>
+	</label>
 	</div>
+	<div class="fb-text form-group field-last-name col-sm-offset-1 col-sm-5" >
+	<input type="text" required="" class="form-control adjustbox" name="last-name" id="last-name" aria-required="true">
+	</div>
+</div>
 
 	<div class="row">
-		<div class="fb-text form-group field-first-name  col-xs-offset-0 col-xs-6" >
-		<label for="date" class="fb-date-label">Date of Damage
- 		<span class="required">*</span>
-		</label>
+		<div class="fb-text form-group field-first-name  col-sm-offset-0 col-sm-6" >
+			<label for="date" class="fb-date-label">Date of Damage
+ 			<span class="required">*</span>
+			</label>
 		</div>
-		<div class="fb-text form-group field-last-name col-xs-offset-1 col-xs-5" >
+		<div class="fb-text form-group field-last-name col-sm-offset-1 col-sm-5" >
 			<input type="date" required="" class="form-control adjustbox" name="date" id="date" aria-required="true">
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="fb-text form-group field-first-name  col-xs-offset-0 col-xs-6" >
+		<div class="fb-text form-group field-first-name  col-sm-offset-0 col-sm-6" >
 		<label for="address" class="fb-text-label">Street Address <span class="required">*</span>
  		</label>
 		</div>
-		<div class="fb-text form-group field-last-name col-xs-offset-1 col-xs-5" >
+		<div class="fb-text form-group field-last-name col-sm-offset-1 col-sm-5" >
 		<input type="text" required="" class="form-control adjustbox" name="address" id="address" aria-required="true">
 		 </div>
 	</div>
 	<div class="row">
-		<div class="fb-text form-group field-first-name  col-xs-offset-0 col-xs-6" >
+		<div class="fb-text form-group field-first-name  col-sm-offset-0 col-sm-6" >
 		<label for="city" class="fb-text-label">City <span class="required">*</span></label>
 		</div>
-		<div class="fb-text form-group field-last-name col-xs-offset-1 col-xs-5" >
+		<div class="fb-text form-group field-last-name col-sm-offset-1 col-sm-5" >
 		<input type="text" required="" class="form-control adjustbox" name="city" id="city" aria-required="true">
 		 </div>
 	</div>
 	<div class="row">
-		<div class="fb-text form-group field-first-name  col-xs-offset-0 col-xs-6" >
+		<div class="fb-text form-group field-first-name  col-sm-offset-0 col-sm-6" >
 		<label for="state" class="fb-text-label">State <span class="required">*</span>
  		</label></div>
-		<div class="fb-text form-group field-last-name col-xs-offset-1 col-xs-5" >
+		<div class="fb-text form-group field-last-name col-sm-offset-1 col-sm-5" >
 		<input type="text" required="" class="form-control adjustbox" name="state" id="state" aria-required="true">
 		  </div>
 	</div>
 	<div class="row">
-		<div class="fb-text form-group field-first-name  col-xs-offset-0 col-xs-6" >
+		<div class="fb-text form-group field-first-name  col-sm-offset-0 col-sm-6" >
 		<label for="zipcoder" class="fb-text-label">Zipcode:
  		<span class="required">*</span>
  		</label>
 	 	</div>
-		<div class="fb-text form-group field-last-name col-xs-offset-1 col-xs-5" >
+		<div class="fb-text form-group field-last-name col-sm-offset-1 col-sm-5" >
 		<input type="text" required="" class="form-control adjustbox" name="zipcode" id="zipcode" aria-required="true">
 		  </div>
 	</div>
 	<div class="row">
-		<div class="fb-text form-group field-first-name  col-xs-offset-0 col-xs-6" >
+		<div class="fb-text form-group field-first-name  col-sm-offset-0 col-sm-6" >
 		<label for="email" class="fb-text-label">Email:
  		<span class="required">*</span>
  		</label>
 	 	</div>
-		<div class="fb-text form-group field-last-name col-xs-offset-1 col-xs-5" >
+		<div class="fb-text form-group field-last-name col-sm-offset-1 col-sm-5" >
 		<input type="text" required="" class="form-control adjustbox" name="email" id="email" aria-required="true">
 		  </div>
 	</div>
 	<div class="row">
-		<div class="fb-text form-group field-first-name  col-xs-offset-0 col-xs-6" >
+		<div class="fb-text form-group field-first-name  col-sm-offset-0 col-sm-6" >
 		<label for="primary-phone-number" class="fb-text-label">Primary Telephone Number:
  		<span class="required">*</span>
  		</label>
 	 	</div>
-		<div class="fb-text form-group field-last-name col-xs-offset-1 col-xs-5" >
+		<div class="fb-text form-group field-last-name col-sm-offset-1 col-sm-5" >
 		<input type="text" required="" class="form-control adjustbox" name="primary-phone-number" id="primary-phone-number" aria-required="true">
 		  </div>
 	</div>
 	<div class="row">
-		<div class="fb-text form-group field-first-name  col-xs-offset-0 col-xs-6" >
+		<div class="fb-text form-group field-first-name  col-sm-offset-0 col-sm-6" >
 			<label for="secondary-phone-number" class="fb-text-label">Secondary Telephone Number:
   		</label>
 	 	</div>
-		<div class="fb-text form-group field-last-name col-xs-offset-1 col-xs-5" >
+		<div class="fb-text form-group field-last-name col-sm-offset-1 col-sm-5" >
 			<input type="text" class="form-control adjustbox" name="secondary-phone-number" id="secondary-phone-number">
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="fb-text form-group field-first-name  col-xs-offset-0 col-xs-6" >
+		<div class="fb-text form-group field-first-name  col-sm-offset-0 col-sm-6" >
 			<label for="County" class="fb-text-label">Select Your County *</label>
 	 	</div>
-		<div class="fb-text form-group field-last-name col-xs-offset-1 col-xs-5" >
-			<select size="1" id="County" title="" name="County">
+		<div class="fb-text form-group field-last-name col-sm-offset-1 col-sm-5" >
+			<select class = size="1" id="County" title="" name="County">
     		<option value="">-Select your county-</option>
 				<option value="Allegheny">Allegheny</option>
     		<option value="Washington">Washington</option>
@@ -153,10 +152,10 @@
 	</div>
 
 	<div class="row">
-			<div class="fb-text form-group field-first-name  col-xs-offset-0 col-xs-6" >
-				<label for="Municipality" class="fb-text-label">Select Your Municpality *</label>
+			<div class="fb-text form-group field-first-name  col-sm-offset-0 col-sm-6" >
+				<label for="Municipality" class="fb-text-label">Select Your Municipality *</label>
 	 		</div>
-		<div class="fb-text form-group field-last-name col-xs-offset-1 col-xs-5" >
+		<div class="fb-text form-group field-last-name col-sm-offset-1 col-sm-5" >
 			<select id="municipality" name="municipality">
     	<option value="">-Select your municipality-</option>
 		</select>
@@ -164,11 +163,11 @@
 	</div>
 
 	<div class="row">
-		<div class="fb-text form-group field-first-name  col-xs-offset-0 col-xs-6" >
+		<div class="fb-text form-group field-first-name  col-sm-offset-0 col-sm-6" >
 			<label for="disaster-type" class="fb-radio-group-label">Type of Disaster *
   		</label>
 	 	</div>
-		<div class="fb-text form-group field-last-name col-xs-offset-1 col-xs-5" >
+		<div class="fb-text form-group field-last-name col-sm-offset-1 col-sm-5" >
 			<select size="1" id="Disaster" title="" name="Disaster">
 					<option>Choose Disaster</option>
 	    		<option value="Flood">Flood</option>
@@ -181,11 +180,11 @@
 
 	<div class="row">
 
-    <div class="fb-radio form-group field-applicant-type col-xs-offset-0 col-xs-6">
+    <div class="fb-radio form-group field-applicant-type col-sm-offset-0 col-sm-6">
     	<label for="applicant-type" class="fb-radio-group-label">Type of Applicant/Structure*
     	</label>
     </div>
-	<div class="fb-text form-group field-last-name col-xs-offset-1 col-xs-5" >
+	<div class="fb-text form-group field-last-name col-sm-offset-1 col-sm-5" >
 
 		<select size="1" id="Applicant-Type" title="" name="Applicant-Type">
 				<option>Choose Applicant/Structure</option>
@@ -202,13 +201,15 @@
     	</div>
    </div>
 
- 	<div class = "red col-xs-offset-3 col-xs-4">
-	 *required field
+ 	<div class = "red col-sm-offset-3 col-sm-6 ital cent">
+	 *indicates required field
 	</div>
-
+<br>
+<br>
+<br>
 	 <div class="space">
 	 <!--<div class="col-md-2 pull-right"> -->
-				 <button class="round col-xs-offset-3 col-xs-6">
+				 <button class="round col-sm-offset-3 col-sm-6">
 							Submit
 				 </button>
 		 </div>
