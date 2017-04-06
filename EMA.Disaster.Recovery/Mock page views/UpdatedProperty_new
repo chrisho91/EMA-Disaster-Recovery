@@ -15,8 +15,8 @@
 
   <nav class="navbar navbar-default navbar-fixed-top nav">
     <div class="container">
-     <img src="Fire.jpg" alt="Disaster" class = "pull-left" style="width:200px;height:60px;">
-     <type="text" class="align-center" name="" id="">FEMA
+     <img src="Reach and Report.png" alt="Disaster" class = "pull-left" style="width:100px;height:75px;">
+     <type="text" class="col-sm-8" name="" id="">EMA
     </div>
   </nav>
   <br>
