@@ -1,0 +1,244 @@
+﻿
+@{
+    ViewBag.Title = "IndividualWorksheetOutput";
+}
+
+<style>
+    .box {
+        outline: 1px solid black;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 text-center"><h3><strong>Disaster Damage Assessment Field Worksheet - Individual Property</strong></h3></div>
+    </div>
+
+    <div class="box">
+        <div class="row">
+            <div class="col-xs-2"><strong>NAME: </strong></div>
+            <div class="col-xs-3">John Smith</div>
+            <div class="col-xs-1"></div>
+            <div class="col-xs-2"><strong>COUNTY: </strong></div>
+            <div class="col-xs-2">Allegheny</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2"><strong>STREET ADDRESS 1: </strong></div>
+            <div class="col-xs-3">3 Bessemer St.</div>
+            <div class="col-xs-1"></div>
+            <div class="col-xs-2"><strong>MUNICIPALITY: </strong></div>
+            <div class="col-xs-2">West Deer</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2"><strong>STREET ADDRESS 2: </strong></div>
+            <div class="col-xs-3">APT B</div>
+            <div class="col-xs-1"></div>
+            <div class="col-xs-2"><strong>STATE:</strong></div>
+            <div class="col-xs-2">Pennsylvania</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2"><strong>CITY:</strong></div>
+            <div class="col-xs-2">Pittsburgh</div>
+            <div class="col-xs-2"></div>
+            <div class="col-xs-2"><strong>ZIP: </strong></div>
+            <div class="col-xs-1">15084</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2"><strong>CODE: </strong></div>
+            <div class="col-xs-2">xyz123</div>
+            <div class="col-xs-2"></div>
+            <div class="col-xs-2"><strong>DATE: </strong></div>
+            <div class="col-xs-2">10-20-2016</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2"><strong>LONGITUDE: </strong></div>
+            <div class="col-xs-2">4352435242</div>
+            <div class="col-xs-2"></div>
+            <div class="col-xs-2"><strong>LATITUDE: </strong></div>
+            <div class="col-xs-2">4352435242</div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="row">
+            <div class="col-xs-9"><strong>LOCATION NOTES: </strong></div>
+            <div class="col-xs-1">YES</div>
+            <div class="col-xs-2">NO</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-7">location notes location notes location notes location notes location notes location notes location notes location notes location notes location notes location notes location notes location notes </div>
+            <div class="col-xs-2"><strong>PRIMARY HOME:</strong></div>
+            <div class="col-xs-1 box">&nbsp</div>
+            <div class="col-xs-1 box">&nbsp</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-7"></div>
+            <div class="col-xs-2"><strong>RENTER:</strong></div>
+            <div class="col-xs-1 box">&nbsp</div>
+            <div class="col-xs-1 box">&nbsp</div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="row">
+            <div class="col-xs-2 text-center"><strong>SYSTEM</strong></div>
+            <div class="col-xs-2 text-center"><strong>DAMAGED</strong></div>
+            <div class="col-xs-2 text-center"><strong>% R.C.</strong></div>
+            <div class="col-xs-3"></div>
+            <div class="col-xs-2 text-center"><strong>DAMAGE CATEGORY</strong></div>
+            <div class="col-xs-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2"></div>
+            <div class="col-xs-1"><strong>HOME</strong></div>
+            <div class="col-xs-1"><strong>MOBILE</strong></div>
+            <div class="col-xs-1"><strong>HOME</strong></div>
+            <div class="col-xs-1"><strong>MOBILE</strong></div>
+            <div class="col-xs-3"></div>
+            <div class="col-xs-1"><strong>HOME</strong></div>
+            <div class="col-xs-1"><strong>MOBILE</strong></div>
+            <div class="col-xs-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 text-right"><strong>Foundation</strong></div>
+            <div class="col-xs-1 box">&nbsp</div>
+            <div class="col-xs-1 box">&nbsp</div>
+            <div class="col-xs-1 box">7</div>
+            <div class="col-xs-1 box">&nbsp</div>
+            <div class="col-xs-1"></div>
+            <div class="col-xs-2 text-right"><strong>DESTROYED</strong></div>
+            <div class="col-xs-1 box">y</div>
+            <div class="col-xs-1 box">n</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 text-right"><strong>Floor (Frame)</strong></div>
+            <div class="col-xs-1 box">&nbsp</div>
+            <div class="col-xs-1 box">&nbsp</div>
+            <div class="col-xs-1 box">16</div>
+            <div class="col-xs-1 box">20</div>
+            <div class="col-xs-1"></div>
+            <div class="col-xs-2 text-right"><strong>MAJOR</strong></div>
+            <div class="col-xs-1 box">y</div>
+            <div class="col-xs-1 box">n</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 text-right"><strong>Exterior Walls</strong></div>
+            <div class="col-xs-1 box">&nbsp</div>
+            <div class="col-xs-1 box">&nbsp</div>
+            <div class="col-xs-1 box">14</div>
+            <div class="col-xs-1 box">35</div>
+            <div class="col-xs-1"></div>
+            <div class="col-xs-2 text-right"><strong>MINOR</strong></div>
+            <div class="col-xs-1 box">y</div>
+            <div class="col-xs-1 box">n</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 text-right"><strong>Roof</strong></div>
+            <div class="col-xs-1 box">&nbsp</div>
+            <div class="col-xs-1 box">&nbsp</div>
+            <div class="col-xs-1 box">9</div>
+            <div class="col-xs-1 box">20</div>
+            <div class="col-xs-1"></div>
+            <div class="col-xs-2 text-right"><strong>AFFECTED</strong></div>
+            <div class="col-xs-1 box">y</div>
+            <div class="col-xs-1 box">n</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 text-right"><strong>Interior Walls</strong></div>
+            <div class="col-xs-1 box">&nbsp</div>
+            <div class="col-xs-1 box">&nbsp</div>
+            <div class="col-xs-1 box">28</div>
+            <div class="col-xs-1 box">25</div>
+            <div class="col-xs-1"></div>
+            <div class="col-xs-2 text-right"><strong>INACCESSIBLE</strong></div>
+            <div class="col-xs-1 box">y</div>
+            <div class="col-xs-1 box">n</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 text-right"><strong>Plumbing</strong></div>
+            <div class="col-xs-1 box">&nbsp</div>
+            <div class="col-xs-1 box">&nbsp</div>
+            <div class="col-xs-1 box">10</div>
+            <div class="col-xs-1 box">&nbsp</div>
+            <div class="col-xs-6"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 text-right"><strong>Heating/A.C.</strong></div>
+            <div class="col-xs-1 box">&nbsp</div>
+            <div class="col-xs-1 box">&nbsp</div>
+            <div class="col-xs-1 box">10</div>
+            <div class="col-xs-1 box">&nbsp</div>
+            <div class="col-xs-6"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 text-right"><strong>Electrical</strong></div>
+            <div class="col-xs-1 box">&nbsp</div>
+            <div class="col-xs-1 box">&nbsp</div>
+            <div class="col-xs-1 box">6</div>
+            <div class="col-xs-1 box">&nbsp</div>
+            <div class="col-xs-6"></div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="row">
+            <div class="col-xs-2 text-right"><strong>Total % Damaged</strong></div>
+            <div class="col-xs-1 box">&nbsp</div>
+            <div class="col-xs-1 box">&nbsp</div>
+            <div class="col-xs-8"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6"></div>
+            <div class="col-xs-3 text-right"><strong>Estimated Replacement Cost</strong></div>
+            <div class="col-xs-3">$____________</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6"></div>
+            <div class="col-xs-3 text-right"><strong>Estimated Structural Damage</strong></div>
+            <div class="col-xs-3">$____________</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6"></div>
+            <div class="col-xs-3 text-right"><strong>Estimated Damage to Contents</strong></div>
+            <div class="col-xs-3">$____________</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6"></div>
+            <div class="col-xs-3 text-right"><strong>Total Estimated Damage</strong></div>
+            <div class="col-xs-3">$____________</div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="row">
+            <div class="col-xs-7"></div>
+            <div class="col-xs-2 text-right"><strong>Flood Insurance:</strong> </div>
+            <div class="col-xs-1">yes</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-7"></div>
+            <div class="col-xs-2 text-right"><strong>Basment Water: </strong></div>
+            <div class="col-xs-1">3"</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-7"></div>
+            <div class="col-xs-2 text-right"><strong>First Floor Water: </strong></div>
+            <div class="col-xs-1">2"</div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="row">
+            <div class="col-xs-3 text-right"><strong>Comments:</strong></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3"></div>
+            <div class="col-xs-9">N/A</div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="row">
+            <div class="col-xs-3 text-right"><strong>Name of Assessor:</strong></div><div class="col-xs-2">Bob Smith</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3 text-right"><strong>Date:</strong></div><div class="col-xs-2">10-14-16</div>
+        </div>
+    </div>
+
+</div><!--close container!-->
+

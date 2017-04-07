@@ -1,0 +1,173 @@
+﻿
+@{
+    ViewBag.Title = "SBAWorksheetOutput";
+}
+<style>
+    .box {
+        outline: 1px solid black;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 text-center"><h3>SBA Physical Disaster Survey Sheet</h3></div>
+    </div>
+
+    <div class="box">
+        <div class="row">
+            <div class="col-xs-1"><strong>Name: </strong></div>
+            <div class="col-xs-3">John Smith</div>
+            <div class="col-xs-4"></div>
+            <div class="col-xs-4"><strong>Date of Damage:</strong> 10/22/2016</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-1"><strong>Address: </strong></div>
+            <div class="col-xs-4">117 Dilworth St. Apt 3</div>
+            <div class="col-xs-3"></div>
+            <div class="col-xs-4"><strong>Type of Disaster:</strong> Flood</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-4">Pittsburgh, PA 15211</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-1"><strong>Telephone: </strong></div>
+            <div class="col-xs-3">724-555-5555</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-5"><strong>Property Owner:</strong> Landlord Name</div>
+        </div>
+        <div class="box">
+            <div class="row">
+                <div class="col-xs-4"><strong>Type of Applicant or Structure:</strong></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2 text-right">Renter:</div>
+                <div class="col-xs-1 text-center box">&nbsp</div>
+                <div class="col-xs-2 text-right">Homeowner:</div>
+                <div class="col-xs-1 text-center box">&nbsp</div>
+                <div class="col-xs-2 text-right">Other:</div>
+                <div class="col-xs-1 text-center box">&nbsp</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2 text-right">Single Family:</div>
+                <div class="col-xs-1 text-center box">&nbsp</div>
+                <div class="col-xs-2 text-right">Multi-Family:</div>
+                <div class="col-xs-1 text-center box">&nbsp</div>
+                <div class="col-xs-2 text-right">Business:</div>
+                <div class="col-xs-1 text-center box">&nbsp</div>
+                <div class="col-xs-1 text-right">Non-Profit:</div>
+                <div class="col-xs-1 text-center box">&nbsp</div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="row">
+                <div class="col-xs-12 text-center"><strong>MARKET VALUE OF PROPERTY</strong></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 text-right"><strong>STRUCTURE: </strong></div>
+                <div class="col-xs-1 text-center box">$1000</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 text-right">Includes total cost to replace primary buildings</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 text-right"><strong>CONTENTS: </strong></div>
+                <div class="col-xs-1 text-center box">$500</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 text-right">Includes total cost to replace personal/business property</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 text-right"><strong>LAND AND IMPROVEMENTS: </strong></div>
+                <div class="col-xs-1 text-center box">$8000</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 text-right">Includes total cost to replace/repair damage to land</div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="row">
+                <div class="col-xs-6"><strong>Name of Insurance Company/Agent:</strong> All-State</div>
+                <div class="col-xs-4"><strong>Phone Number:</strong> 412-555-2333</div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="row">
+                <div class="col-xs-4"><strong>ESTIMATED DISASTER LOSS IN DOLLARS</strong></div>
+                <div class="col-xs-4 text-center"><strong>AMOUNT OF INSURANCE</strong></div>
+                <div class="col-xs-4"><strong>DOLLAR AMOUNT OF UNINSURED LOSS</strong></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2 text-right">Structures</div>
+                <div class="col-xs-1 text-center box">$1000</div>
+                <div class="col-xs-1"></div>
+                <div class="col-xs-2 text-right">Structures</div>
+                <div class="col-xs-1 text-center box">$1000</div>
+                <div class="col-xs-1"></div>
+                <div class="col-xs-2 text-right">Structures</div>
+                <div class="col-xs-1 text-center box">$1000</div>
+                <div class="col-xs-1"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-2 text-right">Contents</div>
+                <div class="col-xs-1 text-center text-center box">$500</div>
+                <div class="col-xs-1"></div>
+                <div class="col-xs-2 text-right">Contents</div>
+                <div class="col-xs-1 text-center box">$500</div>
+                <div class="col-xs-1"></div>
+                <div class="col-xs-2 text-right">Contents</div>
+                <div class="col-xs-1 text-center box">$500</div>
+                <div class="col-xs-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2 text-right">Land Improvements</div>
+                <div class="col-xs-1 text-center text-center box">$8000</div>
+                <div class="col-xs-1"></div>
+                <div class="col-xs-2 text-right">Land Improvements</div>
+                <div class="col-xs-1 text-center box">$8000</div>
+                <div class="col-xs-1"></div>
+                <div class="col-xs-2 text-right">Land Improvements</div>
+                <div class="col-xs-1 text-center box">$8000</div>
+                <div class="col-xs-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8"></div>
+                <div class="col-xs-2 text-right"><strong>TOTAL: </strong></div>
+                <div class="col-xs-1 text-center box"><strong>$7600</strong></div>
+            </div>
+        </div>
+
+
+        <div class="box">
+            <div class="row">
+
+                <div class="col-xs-4"><strong>% UNINSURED LOSS</strong></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-1 text-right">Structures</div>
+                <div class="col-xs-1 text-center box">20%</div>
+                <div class="col-xs-1 text-right">Contents</div>
+                <div class="col-xs-1 text-center text-center box">30%</div>
+                <div class="col-xs-2 text-right">Land Improvements</div>
+                <div class="col-xs-1 text-center text-center box">28%</div>
+            </div>
+
+
+        </div>
+        <div class="box">
+            <div class="row">
+                <div class="col-xs-4"><strong>COMMENTS: </strong></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">&nbsp</div>
+            </div>
+        </div>
+
+
+    </div>
+    <!--box!-->
+</div>
+<!--close container!-->
+

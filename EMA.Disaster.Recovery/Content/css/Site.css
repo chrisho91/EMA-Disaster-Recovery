@@ -24,3 +24,16 @@ textarea {
     max-width: 280px;
 }
 
+.banner{
+        padding: 19% 0 15% 0;
+}
+
+#home {
+	background: url(../img/service-banner.jpg) center top no-repeat fixed;
+	max-height: 100%;
+    position: relative;
+    -webkit-box-shadow: 0 0 20px #333;
+    box-shadow: 0 0 20px #333;
+    background-size: 100%;
+    border-bottom: 4px solid #fff;
+}

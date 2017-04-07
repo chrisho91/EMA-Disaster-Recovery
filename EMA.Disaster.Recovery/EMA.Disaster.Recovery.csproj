@@ -277,6 +277,8 @@
     <Content Include="Views\SBAWorksheet\Delete.cshtml" />
     <Content Include="Views\Admin\SBAConsolidation.cshtml" />
     <Content Include="Views\Home\StartClaim.cshtml" />
+    <Content Include="Views\Admin\SBAWorksheetOutput.cshtml" />
+    <Content Include="Views\Admin\IndividualWorksheetOutput.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
