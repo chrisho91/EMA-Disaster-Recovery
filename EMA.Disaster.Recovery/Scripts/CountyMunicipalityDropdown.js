@@ -1,0 +1,21 @@
+﻿$(document).ready(function () {
+    $("#County").on("change", function () {
+        $("#municipality").html("");
+        var opt = $("<option></option>");
+        opt.val("Select");
+        opt.html("-Select your municipality-");
+        $("#municipality").append(opt);
+        var counties = new Array();
+        var temp = $(this).val();
+        counties["Allegheny"] = ["Aleppo", "Aspinwall", "Avalon", "Borough of Baldwin", "Baldwin Township", "Bell Acres", "Bellevue", "Ben Avon", "Ben Avon Hts.", "Bethal Park", "Blawnox", "Brackenridge", "Braddock", "Braddock Hills", "Bradford Woods", "Brentwood", "Bridgeville", "Carnegie", "Castle Shannon", "Chalfant", "Cheswick", "Churchill", "Clairton", "Collier", "Corapolis", "Crafton", "Crescent", "Dormont", "Dravosburg", "Duquesne", "East Deer", "East McKeesport", "East Pittsburgh", "Edgewood", "Edgeworth", "Borough of Elizabeth", "Elizabeth Township", "Emsworth", "Etna", "Fawn", "Findlay", "Forest Hills", "Forward", "Fox Chapel", "Franklin Park", "Frazer", "Glassport", "Glen Osborne", "Glenfield", "Green Tree", "Hampton", "Harmar", "Harrison", "Haysville", "Heidelberg", "Homestead", "Indiana", "Ingram", "Jefferson Hills", "Kennedy", "Kilbuck", "Leet", "Leetsdale", "Liberty", "Lincoln", "Marshall", "McCandless", "McDonald", "McKeesport", "McKees Rocks", "Millvale", "Monroeville", "Moon", "Mt. Lebanon", "Mt. Oliver", "Munhall", "Neville", "North Braddock", "North Fayette", "North Versailles", "Oakdale", "Oakmont", "O'Hara", "Ohio", "Penn Hills", "Pennsbury Village", "Pine", "Pitcairn", "Pittsburgh", "Pleasant Hills", "Plum", "Port Vue", "Rankin", "Reserve", "Richland", "Robinson", "Ross", "Rosslyn Farms", "Scott", "Sewickley", "Sewickley Hts.", "Sewickley Hills", "Shaler", "Sharpsburg", "South Fayette", "South Park", "South Versailles", "Springdale", "Stowe", "Swissvale", "Tarentem", "Thornburg", "Trafford", "Turtle Creek", "Upper St. Clair", "Verona", "Versailles", "Wall", "West Deer", "West Elizabeth", "West Homestead", "West Mifflin", "West View", "Whitaker", "White Oak", "Whitehall", "Wilkins", "Wilkinsburg", "Wilmerding"];
+        counties["Washington"] = ["Allenport", "Amwell", "Beallsville", "Bentleyville", "Blaine", "Buffalo", "Burgettstown", "California", "Canonsburg", "Canton", "Carroll", "Cecil", "Centerville", "Charleroi", "Chartiers", "Claysville", "Coal Center", "Cokesburg", "Cross Creek", "Deemston", "Donegal", "Donora", "Dunlevy", "East Bethlehem", "East Finley", "East Washington", "Elco", "Ellsworth", "Fallowfield", "Finleyville", "Green Hills", "Hanover", "Hopewell", "Houston", "Independence", "Jefferson", "Long Branch", "Marianna", "McDonald", "Midway", "Monongahela City", "Morris", "Mount Pleasant", "New Eagle", "North Bethlehem", "North Charleroi", "North Franklin", "North Strabane", "Nottingham", "Peters", "Robinson", "Roscoe", "Smith", "Somerset", "South Franklin", "South Strabane", "Speers", "Stockdale", "Twilight", "Union", "Washington", "West Bethlehem", "West Brownsville", "West Finley", "West Middletown", "West Pike Run"]
+        counties["Westmoreland"] = ["Adamsburg", "Allegheny Township", "Arnold,City of", "Arona", "Avonmore", "Bell Twp", "Bolivar", "Cook Twp", "Delmont", "Derry Borough", "Derry Twp", "Donegal Borough", "Donegal Twp", "East Huntington Twp", "East Vandergfit Borough", "Export Borough", "Fairfield Twp", "Greensburg", "Hempfield Twp", "Hunker", "Hyde Park Borough", "Irwin", "Jeannette", "Latrobe", "Laurel Mountain Boro", "Ligonier Boro", "Ligonier Twp", "Lower Burrel", "Loyalhanna", "Madison", "Manor", "Monessen", "Mt. Pleasant Boro", "Mt. Pleasant Twp", "Murrysville", "New Alexandria", "New Florence", "New Kensington", "New Stanton", "North Belle Vernon", "Morth Huntington", "North Iwrin", "Oklahoma", "Penn Boro", "Penn Twp", "Rostraver", "Saint Clair", "Salem", "Scottdale", "Seward", "Sewickley Twp", "Smithton", "South Greensburg", "South Huntington", "Southwest Greensburg", "Sutersville", "Trafford", "Unity", "Upper Burrell", "Vandergrift", "Washington", "West Leechburg", "West Newton", "Youngstown", "Youngwood"];
+        counties["2"] = [" ", "c"];
+        $(counties[temp]).each(function () {
+            var opt = $("<option></option>");
+            opt.val(this);
+            opt.html(this);
+            $("#municipality").append(opt);
+        });
+    });
+});

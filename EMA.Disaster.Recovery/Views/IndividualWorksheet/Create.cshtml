@@ -1,39 +1,21 @@
-﻿
+﻿@model EMA.Disaster.Recovery.Models.IndividualWorksheet
+
 @{
     ViewBag.Title = "Create";
 }
-
-<h2>Create Individual Property Worksheet</h2>
 
 <head>
     <title>
         Contact Information
     </title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script type="text/javascript">
-            $(document).ready(function(){
-                $("#County").on("change",function(){
-                    $("#municipality").html("");
-                    var opt = $("<option></option>");
-                        opt.val("Select");
-                        opt.html("-Select your municipality-");
-                        $("#municipality").append(opt);
-                    var counties = new Array();
-                    var temp = $(this).val();
-										counties["Allegheny"] = ["Aleppo","Aspinwall","Avalon","Borough of Baldwin","Baldwin Township","Bell Acres","Bellevue","Ben Avon","Ben Avon Hts.","Bethal Park","Blawnox","Brackenridge","Braddock","Braddock Hills","Bradford Woods","Brentwood","Bridgeville","Carnegie","Castle Shannon","Chalfant","Cheswick","Churchill","Clairton","Collier","Corapolis","Crafton","Crescent","Dormont","Dravosburg","Duquesne","East Deer","East McKeesport","East Pittsburgh","Edgewood","Edgeworth","Borough of Elizabeth","Elizabeth Township","Emsworth","Etna","Fawn","Findlay","Forest Hills","Forward","Fox Chapel","Franklin Park","Frazer","Glassport","Glen Osborne","Glenfield","Green Tree","Hampton","Harmar","Harrison","Haysville","Heidelberg","Homestead","Indiana","Ingram","Jefferson Hills","Kennedy","Kilbuck","Leet","Leetsdale","Liberty","Lincoln","Marshall","McCandless","McDonald","McKeesport","McKees Rocks","Millvale","Monroeville","Moon","Mt. Lebanon","Mt. Oliver","Munhall","Neville","North Braddock","North Fayette","North Versailles","Oakdale","Oakmont","O'Hara","Ohio","Penn Hills","Pennsbury Village","Pine","Pitcairn","Pittsburgh","Pleasant Hills","Plum","Port Vue","Rankin","Reserve","Richland","Robinson","Ross","Rosslyn Farms","Scott","Sewickley","Sewickley Hts.","Sewickley Hills","Shaler","Sharpsburg","South Fayette","South Park","South Versailles","Springdale","Stowe","Swissvale","Tarentem","Thornburg","Trafford","Turtle Creek","Upper St. Clair","Verona","Versailles","Wall","West Deer","West Elizabeth","West Homestead","West Mifflin","West View","Whitaker","White Oak","Whitehall","Wilkins","Wilkinsburg","Wilmerding"];
-                    counties["Washington"] = ["Allenport","Amwell","Beallsville","Bentleyville","Blaine","Buffalo","Burgettstown","California","Canonsburg","Canton","Carroll","Cecil","Centerville","Charleroi","Chartiers","Claysville","Coal Center","Cokesburg","Cross Creek","Deemston","Donegal","Donora","Dunlevy","East Bethlehem","East Finley","East Washington","Elco","Ellsworth","Fallowfield","Finleyville","Green Hills","Hanover","Hopewell","Houston","Independence","Jefferson","Long Branch","Marianna","McDonald","Midway","Monongahela City","Morris","Mount Pleasant","New Eagle","North Bethlehem","North Charleroi","North Franklin","North Strabane","Nottingham","Peters","Robinson","Roscoe","Smith","Somerset","South Franklin","South Strabane","Speers","Stockdale","Twilight","Union","Washington","West Bethlehem","West Brownsville","West Finley","West Middletown","West Pike Run"]
-                    counties["Westmoreland"] = ["Adamsburg","Allegheny Township","Arnold,City of","Arona","Avonmore","Bell Twp","Bolivar","Cook Twp","Delmont","Derry Borough","Derry Twp","Donegal Borough","Donegal Twp","East Huntington Twp","East Vandergfit Borough","Export Borough","Fairfield Twp","Greensburg","Hempfield Twp","Hunker","Hyde Park Borough","Irwin","Jeannette","Latrobe","Laurel Mountain Boro","Ligonier Boro","Ligonier Twp","Lower Burrel","Loyalhanna","Madison","Manor","Monessen","Mt. Pleasant Boro","Mt. Pleasant Twp","Murrysville","New Alexandria","New Florence","New Kensington","New Stanton","North Belle Vernon","Morth Huntington","North Iwrin","Oklahoma","Penn Boro","Penn Twp","Rostraver","Saint Clair","Salem","Scottdale","Seward","Sewickley Twp","Smithton","South Greensburg","South Huntington","Southwest Greensburg","Sutersville","Trafford","Unity","Upper Burrell","Vandergrift","Washington","West Leechburg","West Newton","Youngstown","Youngwood"];
-                    counties["2"] = [" ","c"];
-                    $(counties[temp]).each(function(){
-                        var opt = $("<option></option>");
-                        opt.val(this);
-                        opt.html(this);
-                        $("#municipality").append(opt);
-                    });
-                });
-            });
+    @Scripts.Render("~/Scripts/CountyMunicipalityDropdown.js")
+    @Styles.Render("~/Content/css/Main.css")
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js">
     </script>
-    <link href="~/Content/css/IndividualWorksheet.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class="container">
@@ -51,7 +33,7 @@
                     </label>
                 </div>
                 <div class="fb-text form-group field-first-name col-xs-offset-1 col-xs-5">
-                    <input type="text" required="" class="form-control adjustbox" name="first-name" id="first-name" aria-required="true">
+                    <input type="text" required="" class="form-control adjustbox" name="first-name" id="first-name" aria-required="true" value="">
                 </div>
             </div>
             <div class="row">
@@ -60,7 +42,6 @@
                         Last Name
                         <span class="required">*</span>
                     </label>
-
                 </div>
                 <div class="fb-text form-group field-last-name col-xs-offset-1 col-xs-5">
                     <input type="text" required="" class="form-control adjustbox" name="last-name" id="last-name" aria-required="true">
@@ -161,7 +142,6 @@
                         <option value="Allegheny">Allegheny</option>
                         <option value="Washington">Washington</option>
                         <option value="Westmoreland">Westmoreland</option>
-
                     </select>
                 </div>
             </div>
@@ -174,116 +154,6 @@
                     <select id="municipality" name="municipality">
                         <option value="">-Select your municipality-</option>
                     </select>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="fb-text form-group field-first-name  col-xs-offset-0 col-xs-6">
-                    <label for="disaster-type" class="fb-radio-group-label">
-                        Type of Disaster *
-                    </label>
-                </div>
-                <div class="fb-text form-group field-last-name col-xs-offset-1 col-xs-5">
-                    <select size="1" id="Disaster" title="" name="Disaster">
-                        <option>Choose Disaster</option>
-                        <option value="Flood">Flood</option>
-                        <option value="Fire">Fire</option>
-                        <option value="Blizzard">Blizzard</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="row">
-
-                <div class="fb-radio form-group field-applicant-type col-xs-offset-0 col-xs-6">
-                    <label for="applicant-type" class="fb-radio-group-label">
-                        Type of Applicant/Structure*
-                    </label>
-                </div>
-                <div class="fb-text form-group field-last-name col-xs-offset-1 col-xs-5">
-
-                    <select size="1" id="Applicant-Type" title="" name="Applicant-Type">
-                        <option>Choose Applicant/Structure</option>
-                        <option value="Renter">Renter</option>
-                        <option value="Single Family">Single Family</option>
-                        <option value="Multiple Family">Multiple Family</option>
-                        <option value="Homeowner">Homeowner</option>
-                        <option value="Business">Business</option>
-                        <option value="Non-Profit">Non-Profit</option>
-                        <option value="Other">Other</option>
-                    </select>
-
-                    <input type="text" name="applicant-type" id="applicant-type-other-value" style="display:none;">
-                </div>
-            </div>
-
-            <div class="red col-xs-offset-3 col-xs-4">
-                *required field
-            </div>
-
-            <div class="space">
-                <button class="round col-xs-offset-3 col-xs-6">
-                    Submit
-                </button>
-            </div>
-
-        </form>
-    </div>
-    <h2>Individual Property Worksheet</h2>
-    <div class="container">
-        <form id="rendered-form">
-
-            <nav class="navbar navbar-default navbar-fixed-top nav">
-                <div class="container">
-                    FEMA
-                </div>
-            </nav>
-            <br>
-            <br>
-            <br>
-
-            <div class="">
-                <h1 type="h1" class="header pagetitle" name="" id=""> Field Worksheet-Individual Property</h1>
-            </div>
-
-            <div class="fb-radio form-group field-home-choice col-sm-offset-0">
-                <label for="home-choice" class="fb-radio-group-label">
-                    Is this a mobile home?
-                    <span class="required">
-                        *
-                    </span>
-                </label>
-                <div class="radio-group">
-                    <input value="option-1" type="radio" required="" class="radio-group" name="home-choice" id="home-choice-0" aria-required="true" checked="">
-                    <label for="home-choice-0">
-                        Yes
-                    </label>
-                    <br>
-                    <input value="option-2" type="radio" required="" class="radio-group" name="home-choice" id="home-choice-1" aria-required="true">
-                    <label for="home-choice-1">
-                        No
-                    </label>
-                </div>
-            </div>
-
-            <div class="fb-radio form-group field-primary-renter col-xs-offset-0">
-                <label for="primary-renter" class="fb-radio-group-label">
-                    Are you the Primary Home Owner or renter?
-                    <span class="required">
-                        *
-                    </span>
-                </label>
-                <div class="radio-group">
-                    <input value="option-1" type="radio" required="" class="radio-group" name="primary-renter" id="primary-renter-0" aria-required="true" checked="">
-                    <label for="owner-renter-0">
-                        Primary Home
-                    </label>
-                    <br>
-                    <input value="option-2" type="radio" required="" class="radio-group" name="primary-renter" id="primary-renter-1" aria-required="true">
-                    <label for="primary-renter-1">
-                        Renter
-                    </label>
                 </div>
             </div>
 
@@ -306,6 +176,53 @@
                 </div>
                 <div class="fb-text form-group field-longitude col-sm-offset-1 col-sm-5">
                     <input type="text" required="" class="form-control adjustbox" name="longitude" id="longitude" aria-required="true">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="fb-text form-group field-first-name  col-xs-offset-0 col-xs-6">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="container">
+        <form id="rendered-form">
+
+            <div class="">
+                <h1 type="h1" class="header pagetitle" name="" id=""> Field Worksheet-Individual Property</h1>
+            </div>
+
+            <div class="row">
+                <div class="fb-text form-group field-home-choice col-sm-offset-0 col-sm-3">
+                    <label for="home-choice" class="fb-text-label">Location Type *</label>
+                </div>
+                <div class="fb-text form-group field-home-choice col-sm-offset-1 col-sm-5">
+                    <select class=size ="1" id="home-choice" title="" name="home-choice">
+                        <option value="">-Select your Location-</option>
+                        <option value="Home">Home</option>
+                        <option value="Mobile Home">Mobile Home</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="fb-radio form-group field-primary-renter col-xs-offset-0">
+                <label for="primary-renter" class="fb-radio-group-label">
+                    Are you the Primary Home Owner or renter?
+                    <span class="required">
+                        *
+                    </span>
+                </label>
+                <div class="radio-group">
+                    <input value="option-1" type="radio" required="" class="radio-group" name="primary-renter" id="primary-renter-0" aria-required="true" checked="">
+                    <label for="owner-renter-0">
+                        Primary Home
+                    </label>
+                    <br>
+                    <input value="option-2" type="radio" required="" class="radio-group" name="primary-renter" id="primary-renter-1" aria-required="true">
+                    <label for="primary-renter-1">
+                        Renter
+                    </label>
                 </div>
             </div>
 
@@ -395,42 +312,23 @@
                 <input type="number" class="form-control" name="electrical" id="electrical">
             </div>
 
-            <div class="">
-                <h1 type="h1" class="header" name="" id="">Damage Category</h1>
+            <div class="row">
+                <div class="fb-text form-group field-damage-category col-sm-offset-0 col-sm-4">
+                    <label for="damage-category" class="fb-text-label">Damage Category *</label>
+                </div>
+                <div class="fb-text form-group field-damage-category col-sm-offset-1 col-sm-5">
+                    <select class=size ="1" id="damage-category" title="" name="damage-category">
+                        <option value="">-Select Category-</option>
+                        <option value="Destroyed">Destroyed</option>
+                        <option value="Major">Major</option>
+                        <option value="Minor">Minor</option>
+                        <option value="Affected">Affected</option>
+                        <option value="Inaccessible">Inaccessible</option>
+                    </select>
+                </div>
             </div>
-            <div class="">
-                <h3 type="h3" class="header" name="" id="">NOTE: none observable refers only to visual inpsection from the dwelling exterior.  These systems can be observed if you able to walk through the dwelling.</h3>
-            </div>
-            <div class="fb-number form-group field-destroyed">
-                <label for="destroyed" class="fb-number-label">
-                    Destroyed
-                </label>
-                <input type="number" class="form-control" name="destroyed" id="destroyed">
-            </div>
-            <div class="fb-number form-group field-major">
-                <label for="major" class="fb-number-label">
-                    Major
-                </label>
-                <input type="number" class="form-control" name="major" id="major">
-            </div>
-            <div class="fb-number form-group field-minor">
-                <label for="minor" class="fb-number-label">
-                    Minor
-                </label>
-                <input type="number" class="form-control" name="minor" id="minor">
-            </div>
-            <div class="fb-number form-group field-affected">
-                <label for="affected" class="fb-number-label">
-                    Affected
-                </label>
-                <input type="number" class="form-control" name="affected" id="affected">
-            </div>
-            <div class="fb-number form-group field-inaccessible">
-                <label for="inaccessible" class="fb-number-label">
-                    Innaccessible
-                </label>
-                <input type="number" class="form-control" name="innaccessible" id="innaccessible">
-            </div>
+
+           
             <div class="fb-undefined form-group field-comments">
                 <label for="comments" class="fb-textarea-label">
                     Comments:
@@ -448,44 +346,57 @@
                         *
                     </span>
                 </label>
-                </div>
-                <div class="radio-group">
-                    <input value="option-1" type="radio" required="" class="radio-group" name="flood-ins" id="flood-ins-0" aria-required="true" checked="">
-                    <label for="flood-ins-0-0">
-                        Yes
-                    </label>
-                    <br>
-                    <input value="option-2" type="radio" required="" class="radio-group" name="flood-ins" id="flood-ins-1" aria-required="true">
-                    <label for="flood-ins-1">
-                        No
-                    </label>
-                </div>
-                <div class="fb-number form-group field-basement-water">
-                    <label for="basement-water" class="fb-number-label">
-                        What is the basement water height(in inches)
-                    </label>
-                    <input type="number" class="form-control" name="basement-water" id="basement-water">
-                </div>
-                <div class="fb-number form-group field-first-floor-water">
-                    <label for="first-floor-water" class="fb-number-label">
-                        What is the first floor water height(in inches)
-                    </label>
-                    <input type="number" class="form-control" name="first-floor-water" id="first-floor-water">
-                </div>
+            </div>
+            <div class="radio-group">
+                <input value="option-1" type="radio" required="" class="radio-group" name="flood-ins" id="flood-ins-0" aria-required="true" checked="">
+                <label for="flood-ins-0-0">
+                    Yes
+                </label>
+                <br>
+                <input value="option-2" type="radio" required="" class="radio-group" name="flood-ins" id="flood-ins-1" aria-required="true">
+                <label for="flood-ins-1">
+                    No
+                </label>
+            </div>
+            <div class="fb-number form-group field-basement-water">
+                <label for="basement-water" class="fb-number-label">
+                    What is the basement water height(in inches)
+                </label>
+                <input type="number" class="form-control" name="basement-water" id="basement-water">
+            </div>
+            <div class="fb-number form-group field-first-floor-water">
+                <label for="first-floor-water" class="fb-number-label">
+                    What is the first floor water height(in inches)
+                </label>
+                <input type="number" class="form-control" name="first-floor-water" id="first-floor-water">
+            </div>
 
-                <div class="fb-undefined form-group field-add-comments">
-                    <label for="add-comments" class="fb-textarea-label">
-                        Enter any additional comments:
-                    </label>
-                    <textarea type="textarea" required="" class="form-control" name="add-comments" id="add-comments" aria-required="true"></textarea>
-                </div>
+            <div class="fb-undefined form-group field-add-comments">
+                <label for="add-comments" class="fb-textarea-label">
+                    Enter any additional comments:
+                </label>
+                <textarea type="textarea" required="" class="form-control" name="add-comments" id="add-comments" aria-required="true"></textarea>
+            </div>
 
-                <div class="space">
-                    <!--<div class="col-md-2 pull-right"> -->
-                    <button class="round col-xs-offset-3 col-xs-6">
-                        Submit
-                    </button>
-                </div>
+            <div class="fb-number form-group field-basement-water">
+                <label for="assessor" class="fb-number-label">
+                    Name of Assessor:
+                </label>
+                <input type="text" class="form-control" name="assessor" id="assessor">
+            </div>
+
+            <div class="fb-number form-group field-date">
+                <label for="date" class="fb-number-label">
+                    Date:
+                </label>
+                <input type="text" class="form-control" name="date" id="date">
+            </div>
+            <div class="space">
+
+                <button class="round col-xs-offset-3 col-xs-6">
+                    Submit
+                </button>
+            </div>
         </form>
     </div>
 </body>

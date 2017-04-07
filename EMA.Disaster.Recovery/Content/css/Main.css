@@ -1,8 +1,8 @@
-﻿body{
+﻿body {
     background-color: #efefef;
-    }
+}
 
-.pagetitle{
+.pagetitle {
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: blue;
@@ -12,76 +12,60 @@
     font-weight: bold;
     font-size: 30pt;
     -webkit-text-fill-color: white;
-    }
+}
 
-h1{
+h1 {
     font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
-label{
+label {
     font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     font-size: 16pt;
     display: inline-block;
     clear: left;
-    /*margin-left: 15px;
-    width: 400px;*/
     text-align: left;
-     }
+}
 
-/*input{
-    padding: 8px;
-    margin: 4px 0;
-    margin-left: 15px;
-    border: 2px solid black;
-    border-radius: 4px;
-    }*/
+input[type='date'] {
+    display: inline-block;
+}
 
-
-
-input[type='date']
-    {
-       /*width: 35%;*/ 
-       display: inline-block;
-    }
-
-.center{
+.center {
     background-color: white;
     display: inline-block;
     text-align: center;
-    }
+}
 
-.round{
+.round {
     border-radius: 20px;
     font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     background-color: white;
-    }
+}
 
-/*textarea{
-    margin-left: 15px;
-}*/
-
-.adjustbox
-{
+.adjustbox {
     display: inline-block;
 }
 
-.red 
-{
-color: red;
+.red {
+    color: red;
 }
 
-.space{
+.space {
     font-size: 18pt;
 }
 
-.rowborder{
+.rowborder {
     border: 1px solid;
 }
 
-.ital{
-    font-style: italic; 
+.ital {
+    font-style: italic;
 }
 
-.cent{
+.cent {
     text-align: center;
+}
+
+#links{
+    margin-right: 10px;
 }

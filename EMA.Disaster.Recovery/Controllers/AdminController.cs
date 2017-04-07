@@ -6,16 +6,15 @@ using System.Web.Mvc;
 
 namespace EMA.Disaster.Recovery.Controllers
 {
-    public class IndividualWorksheetController : Controller
+    public class AdminController : Controller
     {
-        // GET: IndividualWorksheet
+        // GET: Admin
         public ActionResult Index()
         {
             return View();
         }
 
-        //Start individual worksheet
-        public ActionResult Create()
+        public ActionResult SBAConsolidation()
         {
             return View();
         }
